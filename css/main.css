@@ -1,0 +1,12 @@
+/* Styling the menu */
+
+.menu ul {
+    list-style-type: none;
+    display: block;
+    text-align: left;
+}
+
+.menu ul li a {
+    text-decoration: none; /* removes underline from link */
+}
+
