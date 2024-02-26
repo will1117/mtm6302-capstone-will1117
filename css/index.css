@@ -1,0 +1,73 @@
+/* This is the stylesheet for the index.html page */
+
+/***** GLOBAL MAIN CONTENT STYLING *****/
+/* Entire background */
+body {
+    background-color: #283747;
+}
+
+/* all headers, paragraph and footer tags */
+h1, h2, h3, h4, h5, h6, footer, p {
+    /* google font */
+    font-family:"Sofia Sans Extra Condensed", sans-serif;
+    letter-spacing: 0.1rem;
+    color: white;
+}
+
+/* Aligning all text to center */
+.main {
+    text-align: center;
+}
+
+/* Styles the website description */
+.main p {
+    margin: 0% 12%;
+}
+
+/* footer style */
+footer {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+/* Slide out menu pushes main content to right */
+#main {
+    transition: margin-left .5s;
+}
+
+
+
+/***** GLOBAL STYLING THE MENU *****/
+/* Menu box */
+.menu {
+    background-color: #BBC0D1;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+/* Menu List items */
+.menu ul {
+    list-style-type: none;
+    display: block;
+    text-align: left;
+}
+/* Menu link stylization */
+.menu ul li a {
+    text-decoration: none; /* removes underline from link */
+}
+
+.open-menu {
+    color: white;
+    font-size: 2rem;
+}
+
