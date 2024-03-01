@@ -17,13 +17,13 @@
 
     <body>
         <!-- Open menu button -->
-        <span class="open-menu" onclick="openMenu()" style="cursor: pointer;">&equiv;</span>
+        <button class="open-menu">&equiv;</button>
 
         <!-- Side Menu on left -->
         <!-- This should be hidden initally and openable by the open menu button -->
         <div class="menu" id="menu">
             <!-- Close menu button -->
-            <button class="close-menu" href="javascript:void(0)" class="MenuClose" onclick="closeMenu()">&times; close</button>
+            <button class="close-menu">&times;</button>
 
             <h1>Astronomy Picture of the Day</h1>
 
@@ -31,7 +31,7 @@
             <ul>
                 <li><a href="index.html">Today's Picture</a></li>
                 <li><a href="#">Yesterday's Picture</a></li> <!-- text and image should switch with today's img -->
-                <li><a href="favourite.html">Favourite Pictures</a></li>
+                <li><a href="favourites.html">Favourite Pictures</a></li>
                 <li><a href="#">Random Picture</a></li> <!-- text and image should switch with today's img -->
             </ul>
 
@@ -42,11 +42,13 @@
             <!-- </div> -->
 
             <!-- Mobile Calendar *TO BE CHANGED WITH JS: action* -->
-            <!-- <form class="calendar-mobile" id="CalendarMobile" action="#">
+            <form class="enter-date" id="EnterDate" action="#">
                 <h3>Enter Date:</h3>
-                <input type="date">
-                <button input type="submit">Submit</button>
-            </form> -->
+                <input type="date" class="date-input">
+                <br>
+                <br>
+                <button input type="submit" class="date-submit">Submit</button>
+            </form>
 
             <!-- Copyright -->
             <div class="copyright-menu" id="CopyrightMenu">
