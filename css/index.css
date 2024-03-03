@@ -1,12 +1,18 @@
 /* This is the stylesheet for the index.html page ONLY */
 
+/* 
+Things that should be fixed:
+- copyright in main content should move evenly and centered with sliding menu
+- calendar should not select future dates, should be limited up to current date
+*/
+
 /***** GLOBAL MAIN CONTENT STYLING *****/
 /* Entire background */
 body {
     background-color: #283747;
 }
 
-/* all headers, paragraph and footer tags */
+/* all header, paragraph, link and footer tags will be styled this way */
 h1, h2, h3, h4, h5, h6, footer, p, a {
     /* google font */
     font-family:"Sofia Sans Extra Condensed", sans-serif;
@@ -39,11 +45,6 @@ footer {
     margin: 0% 10%;
 }
 
-/* Slide out menu pushes main content to right */
-/* #main {
-    transition: margin-left: 0.5s;
-} */
-
 
 
 /***** GLOBAL STYLING THE MENU *****/
@@ -51,13 +52,14 @@ footer {
 .menu {
     background-color: #BBC0D1;
     height: 100%;
+    width: 0;
     position: fixed;
-    /* z-index: 1; */
-    left: 0;
+    z-index: 1;
     top: 0;
+    left: 0;
+    /* (adds the option to scroll */
     overflow-x: hidden;
-    /* Display: none will hide the menu content by default */
-    display: none;
+    transition: 1s ease;
 }
 
 /* Menu List */
@@ -83,6 +85,7 @@ footer {
 /* Date entering box style */
 .date-input {
     border: 1px solid grey;
+    color: grey;
     padding: 3% 12%;
     font-family:"Sofia Sans Extra Condensed", sans-serif;
     /* Adds caps lock */
@@ -104,7 +107,6 @@ footer {
 /* Aligns copyright to center */
 .copyright-menu {
     text-align: center;
-    bottom: 0;
     margin-top: 20px;
     font-weight: bold;
 }
@@ -121,11 +123,6 @@ footer {
 .close-menu:hover {
     cursor: pointer;
 }
-.close-menu:focus {
-    .menu {
-        display: none;
-    }
-}
 
 /* Open button style */
 .open-menu {
@@ -138,30 +135,32 @@ footer {
 .open-menu:hover {
     cursor: pointer;
 }
-/* When the open menu button is clicked, this code will cause menu to open */
-.open-menu:focus + .menu {
-    display: block;
+
+/* Moves content in main to side when menu is opened */
+#main {
+    transition: margin-left 1s;
 }
 
 
 
 /***** DESKTOP ONLY STYLING, for 1920x1080p screens *****/
 @media screen and (max-width: 1920px) {
-    /* Menu size when opened */
-    .menu {
-        width: 300px;
-    }
+    /* Menu size when opened should be 300px */
+
+    /*** Menu styles ***/
     /* Menu Title */
     .menu h1 {
         font-size: 60px;
         margin: 0px 20px;
     }  
+    /* Menu links */
     .menu ul li {
         margin: 15px 0px;
     }
     .menu ul li a {
         font-size: 20px;
     }
+    /* Enter date */
     .enter-date {
         text-align: center;
     }
@@ -169,10 +168,8 @@ footer {
         font-size: 1.7rem;
         margin-bottom: 10px;
     }
-
-    /* THIS NEEDS TO BE FIXED SO THAT WHEN MENU OPENS IT PUSHES MAIN CONTENT TO RIGHT */
-    .open-menu:focus + .main {
-        margin-left: 300px;
+    .date-input {
+        font-size: 1.2rem;
     }
 }
 
@@ -180,13 +177,14 @@ footer {
 /* To be styled: */
 /***** TABLET ONLY STYLING *****/
 @media screen and (max-width: 800px) {
-    .menu {
+    /* Menu size when opened should be 800px (cover whole screen) */
+    /* .menu {
         width: 800px;
-    }
+    } */
 
     /* Menu Title */
     .menu h1 {
-        font-size: 80px;
+        font-size: 35px;
         margin: 0px 20px;
     }  
 }
@@ -194,7 +192,8 @@ footer {
 
 /***** PHONE ONLY STYLING *****/
 @media screen and (max-width: 500px) {
-    .menu {
+    /* Menu size when opened should be 500px */
+    /* .menu {
         width: 500px;
     }
 

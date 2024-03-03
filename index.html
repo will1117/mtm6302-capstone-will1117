@@ -5,6 +5,9 @@
         <!-- Css -->
         <link rel="stylesheet" href="css/index.css">
 
+        <!-- Javascript -->
+        <script src="main.js"></script>
+
         <!-- Google font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,13 +20,13 @@
 
     <body>
         <!-- Open menu button -->
-        <button class="open-menu">&equiv;</button>
+        <button onclick="openMenu()" class="open-menu">&equiv;</button>
 
         <!-- Side Menu on left -->
         <!-- This should be hidden initally and openable by the open menu button -->
         <div class="menu" id="menu">
             <!-- Close menu button -->
-            <button class="close-menu">&times;</button>
+            <button class="close-menu" a href="javascript:void(0)" onclick="closeMenu()">&times;</button>
 
             <h1>Astronomy Picture of the Day</h1>
 
@@ -35,13 +38,7 @@
                 <li><a href="#">Random Picture</a></li> <!-- text and image should switch with today's img -->
             </ul>
 
-            <!-- Calendars -->
-            <!-- Desktop calendar -->
-            <!-- <div class="calendar-desktop" id="CalendarDesktop"> -->
-            <!-- insert calendar here -->
-            <!-- </div> -->
-
-            <!-- Mobile Calendar *TO BE CHANGED WITH JS: action* -->
+            <!-- Mobile Calendar *TO BE CHANGED WITH JS: action -->
             <form class="enter-date" id="EnterDate" action="#">
                 <h3>Enter Date:</h3>
                 <input type="date" class="date-input">
@@ -75,10 +72,10 @@
 
             <!-- Website Description -->
             <p>Wesbite Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, facilis at. Quibusdam deleniti reprehenderit nam excepturi iusto iste incidunt pariatur aliquid, quam ex. Dolor suscipit modi harum ad fugiat similique? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor, facilis at. Quibusdam deleniti reprehenderit nam excepturi iusto iste incidunt pariatur aliquid, quam ex. Dolor suscipit modi harum ad fugiat similique?</p>
+        
+            <footer>
+                Copyright &#169; Nasa 2024
+            </footer>
         </main>
-
-        <footer>
-            Copyright &#169; Nasa 2024
-        </footer>
     </body>
 </html>
