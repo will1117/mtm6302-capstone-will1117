@@ -1,11 +1,5 @@
 /* This is the stylesheet for the index.html page ONLY */
 
-/* 
-Things that should be fixed:
-- copyright in main content should move evenly and centered with sliding menu
-- calendar should not select future dates, should be limited up to current date
-*/
-
 /***** GLOBAL MAIN CONTENT STYLING *****/
 /* Entire background */
 body {
@@ -39,10 +33,16 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Styling the image box */
+/* Styling the image box, adds margin to img sides */
 .todays-picture {
-    border: 1px solid grey;
     margin: 0% 10%;
+}
+/* Fits picture of the day to website width so that it doesn't go offscreen. (incorperates 
+Img will automatically resize based on screen size */
+.todays-picture img {
+    width: 100%;
+    height: auto;
+    border: 1.5px solid grey;
 }
 
 
@@ -60,6 +60,15 @@ footer {
     /* (adds the option to scroll */
     overflow-x: hidden;
     transition: 1s ease;
+    /* white-space: nowrap; */
+}
+/* Hides the scrolling bar for menu but keeps functionality (for chrome) */
+.menu::-webkit-scrollbar {
+    display: none;
+}
+/* Hides the scrolling bar in menu but keeps functionality (for firefox) */
+.menu {
+    scrollbar-width: none; 
 }
 
 /* Menu List */
@@ -136,16 +145,23 @@ footer {
     cursor: pointer;
 }
 
-/* Moves content in main to side when menu is opened */
-#main {
-    transition: margin-left 1s;
-}
-
 
 
 /***** DESKTOP ONLY STYLING, for 1920x1080p screens *****/
 @media screen and (max-width: 1920px) {
-    /* Menu size when opened should be 300px */
+    /* Menu size when opened should be 300px maximum
+    This is what the javascipt menu opening code will refer to*/
+    .menu {
+        max-width: 300px;
+        /* delays menu opening/closing duration animation */
+        transition: 1.5s;
+        transition-delay: 0.2s;
+    }
+    
+    /* animates movement of content in main to side when menu is opened */
+    #main {
+        transition: margin-left 1s;
+    }
 
     /*** Menu styles ***/
     /* Menu Title */
@@ -177,10 +193,11 @@ footer {
 /* To be styled: */
 /***** TABLET ONLY STYLING *****/
 @media screen and (max-width: 800px) {
-    /* Menu size when opened should be 800px (cover whole screen) */
-    /* .menu {
-        width: 800px;
-    } */
+    /* Menu size when opened should be 800px maximum (cover whole screen) 
+    This is what the javascipt menu opening code will refer to */
+    .menu {
+        max-width: 800px;
+    }
 
     /* Menu Title */
     .menu h1 {
@@ -192,9 +209,10 @@ footer {
 
 /***** PHONE ONLY STYLING *****/
 @media screen and (max-width: 500px) {
-    /* Menu size when opened should be 500px */
-    /* .menu {
-        width: 500px;
+    /* Menu size when opened should be 500px maximum (cover whole screen)
+    This is what the javascipt menu opening code will refer to */
+    .menu {
+        max-width: 100%;
     }
 
     /* Menu Title */
