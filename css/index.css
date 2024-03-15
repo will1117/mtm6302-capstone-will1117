@@ -35,7 +35,10 @@ footer {
 
 /* Styling the image box, adds margin to img sides */
 .todays-picture {
-    margin: 0% 10%;
+    /* old sizing: */
+    /* margin: 0% 15%; */
+    /* new sizing: */
+    margin: 0% 14%;
 }
 /* Fits picture of the day to website width so that it doesn't go offscreen. (incorperates 
 Img will automatically resize based on screen size */
